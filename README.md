@@ -45,8 +45,8 @@ Some of the tools and technologies I love working with:
 Want to take a peek? Visit: [Your Website URL]
 
 Let’s make things happen! 🚀 Feel free to reach out and say hi:
-- **💼 LinkedIn:** [https://www.linkedin.com/in/ekkojames/]
-- **🐙 GitHub:** [https://github.com/JamesrPrince]
-- **📩 Email:** [ekkolabs2@gmail.com]
+- [**💼 LinkedIn:**](https://www.linkedin.com/in/ekkojames/)
+- [**🐙 GitHub:**](https://github.com/JamesrPrince)
+- [**📩 Email:**](ekkolabs2@gmail.com)
 
 Thanks for stopping by, and happy exploring! 😊
