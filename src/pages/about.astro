@@ -1,5 +1,18 @@
 ---
+const pageTitle = "About Me";
 
+const identity = {
+    firstName : "James",
+    country : "Zambia",
+    occupation : "Developer & Data Analyst",
+    hobbies : ["photography", "football", "gaming", "reading"],
+};
+
+const skills = ["Data Analysis", "Python", "SQL", "Machine Learning", "JavaScript", "React", "Node.js", "Data Visualization"];
+
+const happy = true;
+const finished = false;
+const goal = 3;
 ---
 
 <html lang="en">
@@ -8,7 +21,7 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{pageTitle}</title>
         <style>
             :root {
                 --primary-color: #2563eb;
@@ -400,11 +413,14 @@
                 <div class="container">
                     <div class="hero">
                         <div class="hero-content">
-                            <h1>James Prince</h1>
-                            <p class="subtitle">Developer & Data Analyst from Zambia</p>
-                            <p>Welcome to my portfolio! I'm a passionate developer and data analyst with expertise in turning complex data into actionable insights. Based in Zambia, I bring a unique perspective to every project, combining technical skills with local knowledge.</p>
+                            <h1>{pageTitle}</h1>
+                            <p class="subtitle">{identity.occupation} from {identity.country}</p>
+                            <p>Welcome to my portfolio! I'm a passionate developer and data analyst with expertise in turning complex data into actionable insights. Based in {identity.country}, I bring a unique perspective to every project, combining technical skills with local knowledge.</p>
                             <p>My mission is to help businesses and organizations <span class="highlight">unlock the power of their data</span> and build robust technological solutions that drive growth and efficiency.</p>
                             <a href="#contact" class="btn">Get in Touch</a>
+                            {happy && <p>I am happy to be learning Astro!</p>}
+                            {finished && <p>I finished this tutorial</p>}
+                            {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
                         </div>
                         <div class="hero-image">
                             <img src="/api/placeholder/400/400" alt="James Prince - Developer & Data Analyst">
@@ -440,6 +456,10 @@
                 <div class="container">
                     <h2>My Expertise</h2>
                     <p>With a diverse skill set and continuous learning mindset, I bring versatility to every project.</p>
+                    <p>My skills are:</p>
+                        <ul>
+                        {skills.map((skill) => <li>{skill}</li>)}
+                        </ul>
                     
                     <div class="skill-grid">
                         <div class="skill-card">

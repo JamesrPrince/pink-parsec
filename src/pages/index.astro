@@ -1,5 +1,5 @@
 ---
-
+const pageTitle = "Home";
 ---
 
 <!DOCTYPE html>
@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="James Prince - Developer & Data Analyst from Zambia. Specializing in web development and data analytics solutions for businesses across Africa.">
-    <title>James Prince | Developer & Data Analyst</title>
+    <title>{pageTitle}</title>
     <style>
         :root {
             --primary-color: #0066cc;
@@ -338,7 +338,40 @@
         }
         
         /* Skills Section */
-        .skills-container {
+		.skills {
+                margin: 3rem 0;
+            }
+    
+            .skill-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 1.5rem;
+            }
+    
+            .skill-card {
+                background-color: var(--light-background);
+                padding: 1.5rem;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+    
+            .skill-name {
+                font-weight: 600;
+                margin-bottom: 0.5rem;
+            }
+    
+            .progress-bar {
+                height: 10px;
+                background-color: #e5e7eb;
+                border-radius: 5px;
+                overflow: hidden;
+            }
+    
+            .progress {
+                height: 100%;
+                background-color: var(--accent-color);
+            }
+        /* .skills-container {
             display: flex;
             flex-wrap: wrap;
             gap: 30px;
@@ -370,7 +403,7 @@
             height: 100%;
             background-color: var(--primary-color);
             border-radius: 5px;
-        }
+        } */
         
         /* Testimonials */
         .testimonials {
@@ -920,89 +953,63 @@
     </section>
 
     <!-- Skills Section -->
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">My <span>Skills</span></h2>
-            <div class="skills-container">
-                <div class="skills-column">
-                    <div class="skill">
-                        <div class="skill-name">
-                            <h4>Python</h4>
-                            <span>95%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 95%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-name">
-                            <h4>Data Analysis</h4>
-                            <span>90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 90%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-name">
-                            <h4>JavaScript</h4>
-                            <span>85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-name">
-                            <h4>SQL</h4>
-                            <span>92%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 92%;"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="skills-column">
-                    <div class="skill">
-                        <div class="skill-name">
-                            <h4>React</h4>
-                            <span>88%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 88%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-name">
-                            <h4>Machine Learning</h4>
-                            <span>80%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 80%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-name">
-                            <h4>Data Visualization</h4>
-                            <span>87%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 87%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-name">
-                            <h4>Node.js</h4>
-                            <span>82%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 82%;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+	<section class="skills">
+		<div class="container">
+			<h2>My Expertise</h2>
+			<p>With a diverse skill set and continuous learning mindset, I bring versatility to every project.</p>
+			
+			<div class="skill-grid">
+				<div class="skill-card">
+					<div class="skill-name">Data Analysis</div>
+					<div class="progress-bar">
+						<div class="progress" style="width: 95%;"></div>
+					</div>
+				</div>
+				<div class="skill-card">
+					<div class="skill-name">Python</div>
+					<div class="progress-bar">
+						<div class="progress" style="width: 90%;"></div>
+					</div>
+				</div>
+				<div class="skill-card">
+					<div class="skill-name">SQL</div>
+					<div class="progress-bar">
+						<div class="progress" style="width: 85%;"></div>
+					</div>
+				</div>
+				<div class="skill-card">
+					<div class="skill-name">Machine Learning</div>
+					<div class="progress-bar">
+						<div class="progress" style="width: 80%;"></div>
+					</div>
+				</div>
+				<div class="skill-card">
+					<div class="skill-name">JavaScript</div>
+					<div class="progress-bar">
+						<div class="progress" style="width: 85%;"></div>
+					</div>
+				</div>
+				<div class="skill-card">
+					<div class="skill-name">React</div>
+					<div class="progress-bar">
+						<div class="progress" style="width: 80%;"></div>
+					</div>
+				</div>
+				<div class="skill-card">
+					<div class="skill-name">Node.js</div>
+					<div class="progress-bar">
+						<div class="progress" style="width: 75%;"></div>
+					</div>
+				</div>
+				<div class="skill-card">
+					<div class="skill-name">Data Visualization</div>
+					<div class="progress-bar">
+						<div class="progress" style="width: 90%;"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
     <!-- Testimonials Section -->
     <section class="section testimonials">
