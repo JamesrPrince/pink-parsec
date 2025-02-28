@@ -3,648 +3,740 @@ const pageTitle = "Blog & Insights";
 ---
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{pageTitle}</title>
-    <style>
-        :root {
-            --primary-color: #2563eb;
-            --secondary-color: #1e40af;
-            --accent-color: #4ade80;
-            --text-color: #1f2937;
-            --light-text: #6b7280;
-            --background: #ffffff;
-            --light-background: #f9fafb;
-            --border-color: #e5e7eb;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{pageTitle}</title>
+  <style>
+    :root {
+      --primary-color: #2563eb;
+      --secondary-color: #1e40af;
+      --accent-color: #4ade80;
+      --text-color: #1f2937;
+      --light-text: #6b7280;
+      --background: #ffffff;
+      --light-background: #f9fafb;
+      --border-color: #e5e7eb;
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-        body {
-            background-color: var(--background);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
+    body {
+      background-color: var(--background);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
 
-        header {
-            background-color: var(--light-background);
-            padding: 1.5rem 0;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+    header {
+      background-color: var(--light-background);
+      padding: 1.5rem 0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-        }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary-color);
+    }
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
 
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: 500;
+      transition: color 0.3s;
+    }
 
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
+    .nav-links a:hover {
+      color: var(--primary-color);
+    }
 
-        .active {
-            color: var(--primary-color) !important;
-            border-bottom: 2px solid var(--primary-color);
-        }
+    .active {
+      color: var(--primary-color) !important;
+      border-bottom: 2px solid var(--primary-color);
+    }
 
-        .page-title {
-            background-color: var(--light-background);
-            padding: 3rem 0;
-            text-align: center;
-            margin-bottom: 3rem;
-        }
+    .page-title {
+      background-color: var(--light-background);
+      padding: 3rem 0;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
 
-        h1 {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
+    h1 {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
 
-        h2 {
-            font-size: 1.8rem;
-            margin: 1.5rem 0 1rem;
-            color: var(--secondary-color);
-        }
+    h2 {
+      font-size: 1.8rem;
+      margin: 1.5rem 0 1rem;
+      color: var(--secondary-color);
+    }
 
-        h3 {
-            font-size: 1.4rem;
-            margin: 1rem 0 0.5rem;
-            color: var(--text-color);
-        }
+    h3 {
+      font-size: 1.4rem;
+      margin: 1rem 0 0.5rem;
+      color: var(--text-color);
+    }
 
-        p {
-            margin-bottom: 1rem;
-        }
+    p {
+      margin-bottom: 1rem;
+    }
 
-        .subtitle {
-            font-size: 1.2rem;
-            color: var(--light-text);
-        }
+    .subtitle {
+      font-size: 1.2rem;
+      color: var(--light-text);
+    }
 
-        .blog-layout {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
+    .blog-layout {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
 
-        .blog-main {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
+    .blog-main {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
 
-        .featured-post {
-            background-color: var(--light-background);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 1rem;
-            transition: transform 0.3s;
-        }
+    .featured-post {
+      background-color: var(--light-background);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 1rem;
+      transition: transform 0.3s;
+    }
 
-        .featured-post:hover {
-            transform: translateY(-5px);
-        }
+    .featured-post:hover {
+      transform: translateY(-5px);
+    }
 
-        .featured-image {
-            height: 400px;
-            background-color: #ddd;
-            position: relative;
-        }
+    .featured-image {
+      height: 400px;
+      background-color: #ddd;
+      position: relative;
+    }
 
-        .featured-tag {
-            position: absolute;
-            top: 1rem;
-            left: 1rem;
-            background-color: var(--accent-color);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
+    .featured-tag {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background-color: var(--accent-color);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
 
-        .post-content {
-            padding: 1.5rem;
-        }
+    .post-content {
+      padding: 1.5rem;
+    }
 
-        .post-meta {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            color: var(--light-text);
-            font-size: 0.9rem;
-        }
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      color: var(--light-text);
+      font-size: 0.9rem;
+    }
 
-        .category {
-            background-color: var(--light-background);
-            padding: 0.3rem 0.8rem;
-            border-radius: 4px;
-            font-weight: 500;
-            color: var(--primary-color);
-        }
+    .category {
+      background-color: var(--light-background);
+      padding: 0.3rem 0.8rem;
+      border-radius: 4px;
+      font-weight: 500;
+      color: var(--primary-color);
+    }
 
-        .btn {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.3s;
-            margin-top: 1rem;
-        }
+    .btn {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s;
+      margin-top: 1rem;
+    }
 
-        .btn:hover {
-            background-color: var(--secondary-color);
-        }
+    .btn:hover {
+      background-color: var(--secondary-color);
+    }
 
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-        }
+    .btn-outline {
+      background-color: transparent;
+      border: 2px solid var(--primary-color);
+      color: var(--primary-color);
+    }
 
-        .btn-outline:hover {
-            background-color: var(--primary-color);
-            color: white;
-        }
+    .btn-outline:hover {
+      background-color: var(--primary-color);
+      color: white;
+    }
 
-        .posts-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-        }
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
 
-        .post-card {
-            background-color: var(--light-background);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
+    .post-card {
+      background-color: var(--light-background);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
 
-        .post-card:hover {
-            transform: translateY(-5px);
-        }
+    .post-card:hover {
+      transform: translateY(-5px);
+    }
 
-        .card-image {
-            height: 200px;
-            background-color: #ddd;
-        }
+    .card-image {
+      height: 200px;
+      background-color: #ddd;
+    }
 
-        .sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
 
-        .widget {
-            background-color: var(--light-background);
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+    .widget {
+      background-color: var(--light-background);
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
 
-        .widget h3 {
-            margin-top: 0;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1rem;
-        }
+    .widget h3 {
+      margin-top: 0;
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
 
-        .search-form {
-            display: flex;
-            gap: 0.5rem;
-        }
+    .search-form {
+      display: flex;
+      gap: 0.5rem;
+    }
 
-        .search-input {
-            flex-grow: 1;
-            padding: 0.75rem;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            font-size: 1rem;
-        }
+    .search-input {
+      flex-grow: 1;
+      padding: 0.75rem;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      font-size: 1rem;
+    }
 
-        .search-btn {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            border-radius: 4px;
-            padding: 0 1rem;
-            cursor: pointer;
-        }
+    .search-btn {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 0 1rem;
+      cursor: pointer;
+    }
 
-        .categories-list {
-            list-style: none;
-        }
+    .categories-list {
+      list-style: none;
+    }
 
-        .categories-list li {
-            margin-bottom: 0.5rem;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 0.5rem;
-        }
+    .categories-list li {
+      margin-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 0.5rem;
+    }
 
-        .categories-list li:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
+    .categories-list li:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
 
-        .categories-list a {
-            text-decoration: none;
-            color: var(--text-color);
-            display: flex;
-            justify-content: space-between;
-            transition: color 0.3s;
-        }
+    .categories-list a {
+      text-decoration: none;
+      color: var(--text-color);
+      display: flex;
+      justify-content: space-between;
+      transition: color 0.3s;
+    }
 
-        .categories-list a:hover {
-            color: var(--primary-color);
-        }
+    .categories-list a:hover {
+      color: var(--primary-color);
+    }
 
-        .tag-cloud {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
 
-        .tag {
-            background-color: var(--background);
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            text-decoration: none;
-            color: var(--light-text);
-            transition: background-color 0.3s, color 0.3s;
-        }
+    .tag {
+      background-color: var(--background);
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      text-decoration: none;
+      color: var(--light-text);
+      transition:
+        background-color 0.3s,
+        color 0.3s;
+    }
 
-        .tag:hover {
-            background-color: var(--primary-color);
-            color: white;
-        }
+    .tag:hover {
+      background-color: var(--primary-color);
+      color: white;
+    }
 
-        .recent-post {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border-color);
-        }
+    .recent-post {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border-color);
+    }
 
-        .recent-post:last-child {
-            margin-bottom: 0;
-            padding-bottom: 0;
-            border-bottom: none;
-        }
+    .recent-post:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
 
-        .recent-post-img {
-            width: 80px;
-            height: 80px;
-            background-color: #ddd;
-            border-radius: 4px;
-            flex-shrink: 0;
-        }
+    .recent-post-img {
+      width: 80px;
+      height: 80px;
+      background-color: #ddd;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
 
-        .recent-post-info h4 {
-            margin: 0 0 0.5rem;
-            font-size: 1rem;
-        }
+    .recent-post-info h4 {
+      margin: 0 0 0.5rem;
+      font-size: 1rem;
+    }
 
-        .recent-post-info a {
-            text-decoration: none;
-            color: var(--text-color);
-            transition: color 0.3s;
-        }
+    .recent-post-info a {
+      text-decoration: none;
+      color: var(--text-color);
+      transition: color 0.3s;
+    }
 
-        .recent-post-info a:hover {
-            color: var(--primary-color);
-        }
+    .recent-post-info a:hover {
+      color: var(--primary-color);
+    }
 
-        .newsletter-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
+    .newsletter-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
 
-        .newsletter-input {
-            padding: 0.75rem;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            font-size: 1rem;
-        }
+    .newsletter-input {
+      padding: 0.75rem;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      font-size: 1rem;
+    }
 
-        .pagination {
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-top: 3rem;
-        }
+    .pagination {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 3rem;
+    }
 
-        .page-link {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            border: 1px solid var(--border-color);
-            text-decoration: none;
-            color: var(--text-color);
-            border-radius: 4px;
-            transition: background-color 0.3s, color 0.3s;
-        }
+    .page-link {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--border-color);
+      text-decoration: none;
+      color: var(--text-color);
+      border-radius: 4px;
+      transition:
+        background-color 0.3s,
+        color 0.3s;
+    }
 
-        .page-link:hover, .page-link.active {
-            background-color: var(--primary-color);
-            color: white;
-            border-color: var(--primary-color);
-        }
+    .page-link:hover,
+    .page-link.active {
+      background-color: var(--primary-color);
+      color: white;
+      border-color: var(--primary-color);
+    }
 
-        footer {
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-            margin-top: 3rem;
-        }
+    footer {
+      background-color: var(--secondary-color);
+      color: white;
+      padding: 2rem 0;
+      text-align: center;
+      margin-top: 3rem;
+    }
 
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin: 1rem 0;
-        }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 1rem 0;
+    }
 
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-        }
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+    }
 
-        @media (max-width: 992px) {
-            .blog-layout {
-                grid-template-columns: 1fr;
-            }
-            .posts-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+    @media (max-width: 992px) {
+      .blog-layout {
+        grid-template-columns: 1fr;
+      }
+      .posts-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            .featured-image {
-                height: 300px;
-            }
-        }
-    </style>
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .featured-image {
+        height: 300px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">James Prince</div>
-                <div class="nav-links">
-                    <a href="/">Home</a>
-                    <a href="/about/">About</a>
-                    <a href="/projects/">Projects</a>
-                    <a href="/blog/" class="active">Blog</a>
-                    <a href="/contact/">Contact</a>
-                </div>
-            </nav>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">James Prince</div>
+        <div class="nav-links">
+          <a href="/">Home</a>
+          <a href="/about/">About</a>
+          <a href="/projects/">Projects</a>
+          <a href="/blog/" class="active">Blog</a>
+          <a href="/contact/">Contact</a>
         </div>
-    </header>
+      </nav>
+    </div>
+  </header>
 
-    <section class="page-title">
-        <div class="container">
-            <h1>{pageTitle}</h1>
-            <p class="subtitle">Sharing knowledge and experiences from the world of development and data analysis</p>
-        </div>
-    </section>
+  <section class="page-title">
+    <div class="container">
+      <h1>{pageTitle}</h1>
+      <p class="subtitle">
+        Sharing knowledge and experiences from the world of development and data
+        analysis
+      </p>
+    </div>
+  </section>
 
-    <main class="container">
-        <div class="blog-layout">
-            <div class="blog-main">
-                <article class="featured-post">
-                    <div class="featured-image">
-                        <span class="featured-tag">Featured</span>
-                        <img src="/api/placeholder/800/400" alt="Data Analysis in Zambia: Challenges and Opportunities" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <div class="post-content">
-                        <div class="post-meta">
-                            <span>February 15, 2025</span>
-                            <span class="category">Data Analysis</span>
-                        </div>
-                        <h2>Data Analysis in Zambia: Challenges and Opportunities</h2>
-                        <p>The landscape of data analysis in Zambia is rapidly evolving. As businesses and organizations increasingly recognize the value of data-driven decision making, the demand for skilled data analysts has surged. However, this growth comes with its unique set of challenges and opportunities...</p>
-                        <a href="#" class="btn">Read More</a>
-                    </div>
-                </article>
-
-                <h2>Recent Articles</h2>
-                <div class="posts-grid">
-                    <article class="post-card">
-                        <div class="card-image">
-                            <img src="/api/placeholder/400/200" alt="Python vs R for Data Analysis: Which is Better for African Startups?" style="width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <div class="post-content">
-                            <div class="post-meta">
-                                <span>February 5, 2025</span>
-                                <span class="category">Programming</span>
-                            </div>
-                            <h3>Python vs R for Data Analysis: Which is Better for African Startups?</h3>
-                            <p>When it comes to data analysis tools, Python and R are the two giants that dominate the landscape. For African startups with limited resources, choosing the right tool is crucial...</p>
-                            <a href="/posts/python_vs_r/" class="btn btn-outline">Read More</a>
-                        </div>
-                    </article>
-
-                    <article class="post-card">
-                        <div class="card-image">
-                            <img src="/api/placeholder/400/200" alt="Building Responsive Websites: A Guide for Zambian Developers" style="width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <div class="post-content">
-                            <div class="post-meta">
-                                <span>January 28, 2025</span>
-                                <span class="category">Web Development</span>
-                            </div>
-                            <h3>Building Responsive Websites: A Guide for Zambian Developers</h3>
-                            <p>With mobile internet usage dominating in Zambia, creating responsive websites is no longer optional—it's essential. This guide explores best practices for Zambian developers...</p>
-                            <a href="/posts/post-2" class="btn btn-outline">Read More</a>
-                        </div>
-                    </article>
-
-                    <article class="post-card">
-                        <div class="card-image">
-                            <img src="/api/placeholder/400/200" alt="Data Visualization Techniques for Effective Communication" style="width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <div class="post-content">
-                            <div class="post-meta">
-                                <span>January 15, 2025</span>
-                                <span class="category">Data Visualization</span>
-                            </div>
-                            <h3>Data Visualization Techniques for Effective Communication</h3>
-                            <p>The art of transforming complex data into intuitive visuals is a crucial skill for any data analyst. Learn how to create compelling visualizations that tell a story...</p>
-                            <a href="/posts/post-3" class="btn btn-outline">Read More</a>
-                        </div>
-                    </article>
-
-                    <article class="post-card">
-                        <div class="card-image">
-                            <img src="/api/placeholder/400/200" alt="Leveraging Machine Learning for Business Growth in Africa" style="width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <div class="post-content">
-                            <div class="post-meta">
-                                <span>January 8, 2025</span>
-                                <span class="category">Machine Learning</span>
-                            </div>
-                            <h3>Leveraging Machine Learning for Business Growth in Africa</h3>
-                            <p>Machine learning is transforming businesses across Africa. From predictive analytics to customer segmentation, discover how African companies are harnessing ML...</p>
-                            <a href="#" class="btn btn-outline">Read More</a>
-                        </div>
-                    </article>
-                </div>
-
-                <div class="pagination">
-                    <a href="#" class="page-link active">1</a>
-                    <a href="#" class="page-link">2</a>
-                    <a href="#" class="page-link">3</a>
-                    <span class="page-link">...</span>
-                    <a href="#" class="page-link">10</a>
-                    <a href="#" class="page-link">Next →</a>
-                </div>
+  <main class="container">
+    <div class="blog-layout">
+      <div class="blog-main">
+        <article class="featured-post">
+          <div class="featured-image">
+            <span class="featured-tag">Featured</span>
+            <img
+              src="/api/placeholder/800/400"
+              alt="Data Analysis in Zambia: Challenges and Opportunities"
+              style="width: 100%; height: 100%; object-fit: cover;"
+            />
+          </div>
+          <div class="post-content">
+            <div class="post-meta">
+              <span>February 15, 2025</span>
+              <span class="category">Data Analysis</span>
             </div>
+            <h2>Data Analysis in Zambia: Challenges and Opportunities</h2>
+            <p>
+              The landscape of data analysis in Zambia is rapidly evolving. As
+              businesses and organizations increasingly recognize the value of
+              data-driven decision making, the demand for skilled data analysts
+              has surged. However, this growth comes with its unique set of
+              challenges and opportunities...
+            </p>
+            <a href="#" class="btn">Read More</a>
+          </div>
+        </article>
 
-            <aside class="sidebar">
-                <div class="widget">
-                    <h3>Search</h3>
-                    <form class="search-form">
-                        <input type="text" class="search-input" placeholder="Search articles...">
-                        <button type="submit" class="search-btn">🔍</button>
-                    </form>
-                </div>
-
-                <div class="widget">
-                    <h3>Categories</h3>
-                    <ul class="categories-list">
-                        <li><a href="#">Data Analysis <span>(12)</span></a></li>
-                        <li><a href="#">Web Development <span>(8)</span></a></li>
-                        <li><a href="#">Machine Learning <span>(6)</span></a></li>
-                        <li><a href="#">Programming <span>(9)</span></a></li>
-                        <li><a href="#">Data Visualization <span>(5)</span></a></li>
-                        <li><a href="#">Tech in Africa <span>(7)</span></a></li>
-                    </ul>
-                </div>
-
-                <div class="widget">
-                    <h3>Recent Posts</h3>
-                    <div class="recent-post">
-                        <div class="recent-post-img">
-                            <img src="/api/placeholder/80/80" alt="Data Analysis in Zambia" style="width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <div class="recent-post-info">
-                            <h4><a href="#">Data Analysis in Zambia: Challenges and Opportunities</a></h4>
-                            <span>February 15, 2025</span>
-                        </div>
-                    </div>
-                    <div class="recent-post">
-                        <div class="recent-post-img">
-                            <img src="/api/placeholder/80/80" alt="Python vs R" style="width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <div class="recent-post-info">
-                            <h4><a href="#">Python vs R for Data Analysis: Which is Better for African Startups?</a></h4>
-                            <span>February 5, 2025</span>
-                        </div>
-                    </div>
-                    <div class="recent-post">
-                        <div class="recent-post-img">
-                            <img src="/api/placeholder/80/80" alt="Responsive Websites" style="width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <div class="recent-post-info">
-                            <h4><a href="#">Building Responsive Websites: A Guide for Zambian Developers</a></h4>
-                            <span>January 28, 2025</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="widget">
-                    <h3>Popular Tags</h3>
-                    <div class="tag-cloud">
-                        <a href="#" class="tag">Python</a>
-                        <a href="#" class="tag">Data Analysis</a>
-                        <a href="#" class="tag">Machine Learning</a>
-                        <a href="#" class="tag">JavaScript</a>
-                        <a href="#" class="tag">React</a>
-                        <a href="#" class="tag">SQL</a>
-                        <a href="#" class="tag">Data Visualization</a>
-                        <a href="#" class="tag">Web Development</a>
-                        <a href="#" class="tag">Zambia</a>
-                        <a href="#" class="tag">Africa</a>
-                        <a href="#" class="tag">Tech</a>
-                        <a href="#" class="tag">Node.js</a>
-                    </div>
-                </div>
-
-                <div class="widget">
-                    <h3>Newsletter</h3>
-                    <p>Subscribe to my newsletter for the latest articles and updates.</p>
-                    <form class="newsletter-form">
-                        <input type="email" class="newsletter-input" placeholder="Your email address">
-                        <button type="submit" class="btn">Subscribe</button>
-                    </form>
-                </div>
-
-                <div class="widget">
-                    <h3>About Me</h3>
-                    <p>James Prince is a developer and data analyst from Zambia with over 7 years of experience. He specializes in turning complex data into actionable insights.</p>
-                    <a href="about.html" class="btn btn-outline">Learn More</a>
-                </div>
-            </aside>
-        </div>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 James Prince. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="projects.html">Projects</a>
-                <a href="blog.html">Blog</a>
-                <a href="contact.html">Contact</a>
+        <h2>Recent Articles</h2>
+        <div class="posts-grid">
+          <article class="post-card">
+            <div class="card-image">
+              <img
+                src="/api/placeholder/400/200"
+                alt="Python vs R for Data Analysis: Which is Better for African Startups?"
+                style="width: 100%; height: 100%; object-fit: cover;"
+              />
             </div>
+            <div class="post-content">
+              <div class="post-meta">
+                <span>February 5, 2025</span>
+                <span class="category">Programming</span>
+              </div>
+              <h3>
+                Python vs R for Data Analysis: Which is Better for African
+                Startups?
+              </h3>
+              <p>
+                When it comes to data analysis tools, Python and R are the two
+                giants that dominate the landscape. For African startups with
+                limited resources, choosing the right tool is crucial...
+              </p>
+              <a href="/posts/python_vs_r/" class="btn btn-outline">Read More</a
+              >
+            </div>
+          </article>
+
+          <article class="post-card">
+            <div class="card-image">
+              <img
+                src="/api/placeholder/400/200"
+                alt="Building Responsive Websites: A Guide for Zambian Developers"
+                style="width: 100%; height: 100%; object-fit: cover;"
+              />
+            </div>
+            <div class="post-content">
+              <div class="post-meta">
+                <span>January 28, 2025</span>
+                <span class="category">Web Development</span>
+              </div>
+              <h3>
+                Building Responsive Websites: A Guide for Zambian Developers
+              </h3>
+              <p>
+                With mobile internet usage dominating in Zambia, creating
+                responsive websites is no longer optional—it's essential. This
+                guide explores best practices for Zambian developers...
+              </p>
+              <a href="/posts/post-2" class="btn btn-outline">Read More</a>
+            </div>
+          </article>
+
+          <article class="post-card">
+            <div class="card-image">
+              <img
+                src="/api/placeholder/400/200"
+                alt="Data Visualization Techniques for Effective Communication"
+                style="width: 100%; height: 100%; object-fit: cover;"
+              />
+            </div>
+            <div class="post-content">
+              <div class="post-meta">
+                <span>January 15, 2025</span>
+                <span class="category">Data Visualization</span>
+              </div>
+              <h3>Data Visualization Techniques for Effective Communication</h3>
+              <p>
+                The art of transforming complex data into intuitive visuals is a
+                crucial skill for any data analyst. Learn how to create
+                compelling visualizations that tell a story...
+              </p>
+              <a href="/posts/post-3" class="btn btn-outline">Read More</a>
+            </div>
+          </article>
+
+          <article class="post-card">
+            <div class="card-image">
+              <img
+                src="/api/placeholder/400/200"
+                alt="Leveraging Machine Learning for Business Growth in Africa"
+                style="width: 100%; height: 100%; object-fit: cover;"
+              />
+            </div>
+            <div class="post-content">
+              <div class="post-meta">
+                <span>January 8, 2025</span>
+                <span class="category">Machine Learning</span>
+              </div>
+              <h3>Leveraging Machine Learning for Business Growth in Africa</h3>
+              <p>
+                Machine learning is transforming businesses across Africa. From
+                predictive analytics to customer segmentation, discover how
+                African companies are harnessing ML...
+              </p>
+              <a href="#" class="btn btn-outline">Read More</a>
+            </div>
+          </article>
         </div>
-    </footer>
+
+        <div class="pagination">
+          <a href="#" class="page-link active">1</a>
+          <a href="#" class="page-link">2</a>
+          <a href="#" class="page-link">3</a>
+          <span class="page-link">...</span>
+          <a href="#" class="page-link">10</a>
+          <a href="#" class="page-link">Next →</a>
+        </div>
+      </div>
+
+      <aside class="sidebar">
+        <div class="widget">
+          <h3>Search</h3>
+          <form class="search-form">
+            <input
+              type="text"
+              class="search-input"
+              placeholder="Search articles..."
+            />
+            <button type="submit" class="search-btn">🔍</button>
+          </form>
+        </div>
+
+        <div class="widget">
+          <h3>Categories</h3>
+          <ul class="categories-list">
+            <li><a href="#">Data Analysis <span>(12)</span></a></li>
+            <li><a href="#">Web Development <span>(8)</span></a></li>
+            <li><a href="#">Machine Learning <span>(6)</span></a></li>
+            <li><a href="#">Programming <span>(9)</span></a></li>
+            <li><a href="#">Data Visualization <span>(5)</span></a></li>
+            <li><a href="#">Tech in Africa <span>(7)</span></a></li>
+          </ul>
+        </div>
+
+        <div class="widget">
+          <h3>Recent Posts</h3>
+          <div class="recent-post">
+            <div class="recent-post-img">
+              <img
+                src="/api/placeholder/80/80"
+                alt="Data Analysis in Zambia"
+                style="width: 100%; height: 100%; object-fit: cover;"
+              />
+            </div>
+            <div class="recent-post-info">
+              <h4>
+                <a href="#"
+                  >Data Analysis in Zambia: Challenges and Opportunities</a
+                >
+              </h4>
+              <span>February 15, 2025</span>
+            </div>
+          </div>
+          <div class="recent-post">
+            <div class="recent-post-img">
+              <img
+                src="/api/placeholder/80/80"
+                alt="Python vs R"
+                style="width: 100%; height: 100%; object-fit: cover;"
+              />
+            </div>
+            <div class="recent-post-info">
+              <h4>
+                <a href="#"
+                  >Python vs R for Data Analysis: Which is Better for African
+                  Startups?</a
+                >
+              </h4>
+              <span>February 5, 2025</span>
+            </div>
+          </div>
+          <div class="recent-post">
+            <div class="recent-post-img">
+              <img
+                src="/api/placeholder/80/80"
+                alt="Responsive Websites"
+                style="width: 100%; height: 100%; object-fit: cover;"
+              />
+            </div>
+            <div class="recent-post-info">
+              <h4>
+                <a href="#"
+                  >Building Responsive Websites: A Guide for Zambian Developers</a
+                >
+              </h4>
+              <span>January 28, 2025</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="widget">
+          <h3>Popular Tags</h3>
+          <div class="tag-cloud">
+            <a href="#" class="tag">Python</a>
+            <a href="#" class="tag">Data Analysis</a>
+            <a href="#" class="tag">Machine Learning</a>
+            <a href="#" class="tag">JavaScript</a>
+            <a href="#" class="tag">React</a>
+            <a href="#" class="tag">SQL</a>
+            <a href="#" class="tag">Data Visualization</a>
+            <a href="#" class="tag">Web Development</a>
+            <a href="#" class="tag">Zambia</a>
+            <a href="#" class="tag">Africa</a>
+            <a href="#" class="tag">Tech</a>
+            <a href="#" class="tag">Node.js</a>
+          </div>
+        </div>
+
+        <div class="widget">
+          <h3>Newsletter</h3>
+          <p>Subscribe to my newsletter for the latest articles and updates.</p>
+          <form class="newsletter-form">
+            <input
+              type="email"
+              class="newsletter-input"
+              placeholder="Your email address"
+            />
+            <button type="submit" class="btn">Subscribe</button>
+          </form>
+        </div>
+
+        <div class="widget">
+          <h3>About Me</h3>
+          <p>
+            James Prince is a developer and data analyst from Zambia with over 7
+            years of experience. He specializes in turning complex data into
+            actionable insights.
+          </p>
+          <a href="about.html" class="btn btn-outline">Learn More</a>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 James Prince. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
 </body>
-</html>
