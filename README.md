@@ -20,7 +20,7 @@ I’m a tech enthusiast who loves building cool stuff and diving into data to un
 
 ## 🚀 Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
+Inside my project, you'll see the following folders and files:
 
 ```text
 /
